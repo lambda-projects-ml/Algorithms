@@ -4,21 +4,23 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-    # count = 0
     list = []
+    divide = []
     for key in recipe:
-        x = key
-        print(x)
-        if x in ingredients:
-            list.append(x)
-            print(key, ingredients)
-            print(key)
-    print(key)
+        if key in ingredients:
+            list.append(key)
+        else:
+            return 0
+    for i in list:
+        divide.append(int(ingredients[i]/recipe[i]))
 
-    # print(recipe_batches({'milk': 100, 'flour': 4, 'sugar': 10, 'butter': 5}, {
-    #       'milk': 1288, 'flour': 9, 'sugar': 95}))
-print(recipe_batches({'milk': 100, 'butter': 50, 'cheese': 10}, {
-      'milk': 198, 'butter': 52, 'cheese': 10}))
+    return min(divide)
+
+
+# print(recipe_batches({'milk': 100, 'flour': 4, 'sugar': 10, 'butter': 5}, {
+#       'milk': 1288, 'flour': 9, 'sugar': 95}))
+# print(recipe_batches({'milk': 100, 'butter': 50, 'cheese': 10}, {
+#       'milk': 198, 'butter': 52, 'cheese': 10}))
 # print(recipe_batches({'milk': 2, 'sugar': 40, 'butter': 20}, {
 #       'milk': 5, 'sugar': 120, 'butter': 500}))
 # print(recipe_batches({'milk': 2}, {'milk': 200}))
